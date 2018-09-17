@@ -4,29 +4,34 @@ public class ForthJavaQs {
 
     public static void main(String[] args) {
 
-        String mainEnteringNumbers;
-        int totalAmountOFNumbersEntered = 0, theTotalSum = 0;
+        String mainEnteringNumbersAsString;
+        int totalAmountOFNumbersEntered = 0, totalSum = 0;
         boolean numberTest = false;
 
         while(!numberTest)
         {
 
-            mainEnteringNumbers = JOptionPane.showInputDialog("Please enter a number");
+            mainEnteringNumbersAsString = (JOptionPane.showInputDialog("Please enter a number"));
+            totalAmountOFNumbersEntered++;
 
-            if(mainEnteringNumbers.equals("q"))
+            if(mainEnteringNumbersAsString.equals("q"))
             {
                 numberTest = true;
                 totalAmountOFNumbersEntered = totalAmountOFNumbersEntered - 1;
             }
 
-            totalAmountOFNumbersEntered++;
-            theTotalSum = mainEnteringNumbers + mainEnteringNumbers;
+
+            if(!mainEnteringNumbersAsString.equals("q"))
+            {
+                int mainEnteringNumbers = Integer.parseInt(mainEnteringNumbersAsString);
+                totalSum += mainEnteringNumbers;
+            }
 
 
 
         }
 
         JOptionPane.showMessageDialog(null,"Total of numbers entered: " + totalAmountOFNumbersEntered
-                + "Total sum of numbers entered " + theTotalSum);
+                + "\nTotal sum of numbers entered " + totalSum);
     }
 }
