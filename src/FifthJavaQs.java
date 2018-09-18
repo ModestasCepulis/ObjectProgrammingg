@@ -3,21 +3,8 @@ import javax.swing.*;
 public class FifthJavaQs {
     public static void main(String[] args) {
 
-
-        
-
-
-
-
-
-
+        Question();
     }
-
-
-
-
-
-
 
 
     public void Result(double result)
@@ -25,14 +12,14 @@ public class FifthJavaQs {
         JOptionPane.showMessageDialog(null,"The result is : " + result);
     }
 
-    public String Question()
+    public static String Question()
     {
         String operationDesired = JOptionPane.showInputDialog("(A) Please choose one of the following: \nA (for addition) " +
                 "\nS (for subtraction) \n M (for multiplication) \n D (for division)");
         return operationDesired;
     }
 
-    public void switchCode(String operationDesired)
+    public static void switchCode(String operationDesired)
     {
 
         char operationDesiredAsChar = operationDesired.charAt(0);
@@ -74,9 +61,6 @@ public class FifthJavaQs {
             default:
                 JOptionPane.showMessageDialog(null,"Invalid! Please enter a choice: \nA\nS\nM\nD");
                 break;
-
-
-
         }
 
 
