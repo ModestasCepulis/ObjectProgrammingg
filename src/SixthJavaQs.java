@@ -7,24 +7,43 @@ public class SixthJavaQs {
 
        QuestionUD();
 
+
+
     }
 
-    public static double SwitchUD(char operationDesiredAsChar) {
+    public static void SwitchUD(char operationDesiredAsChar) {
 
         switch (operationDesiredAsChar) {
             case 'A':
-                String firstNumberAsString = JOptionPane.showInputDialog("(B) Please enter the first number: ");
-                double firstNumber = Double.parseDouble(firstNumberAsString);
+                getNum1();
+                getNum2();
+                break;
+            case 'S':
+                getNum1();
+                getNum2();
+                Subtraction(getNum1(), getNum2());
+                break;
 
-                String secondNumberAsString = JOptionPane.showInputDialog("(C) Please enter the second number: ");
-                double secondNumber = Double.parseDouble(firstNumberAsString);
+            case 'M':
+                getNum1();
+                getNum2();
+                break;
 
-                double result = firstNumber + secondNumber;
+            case 'D':
+                getNum1();
+                getNum2();
+                break;
 
-                return result;
-
+            default:
+                JOptionPane.showMessageDialog(null,"Invalid! Please enter a choice: \nA\nS\nM\nD");
+                break;
         }
+
+
+
     }
+
+
 
     public static void QuestionUD()
     {
@@ -34,6 +53,42 @@ public class SixthJavaQs {
         char operationDesiredAsChar = operationDesired.charAt(0);
         operationDesiredAsChar = operationDesiredAsChar;
         SixthJavaQs.SwitchUD(operationDesiredAsChar);
+
+        SixthJavaQs.theLastResult(double result);
     }
-    
+
+    public static void theLastResult(double result)
+    {
+        JOptionPane.showMessageDialog(null,"your result is: " + result);
+    }
+
+    public static double Addition(double firstNumber, double secondNumber)
+    {
+        double result;
+        result = firstNumber + secondNumber;
+        return result;
+
+    }
+
+    public static double Subtraction(double firstNumber, double secondNumber)
+    {
+        double result;
+        result = firstNumber - secondNumber;
+        return result;
+
+    }
+
+    public static double getNum1()
+    {
+        String firstNumberAsString = JOptionPane.showInputDialog("(B) Please enter first number: ");
+        double firstNumber = Double.parseDouble(firstNumberAsString);
+        return firstNumber;
+    }
+
+    public static double getNum2()
+    {
+        String secondNumberAsString = JOptionPane.showInputDialog("(C) Please enter the second number: ");
+        double secondNumber = Double.parseDouble(secondNumberAsString);
+        return secondNumber;
+    }
 }
