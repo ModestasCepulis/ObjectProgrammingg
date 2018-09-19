@@ -4,38 +4,37 @@ public class SixthJavaQs {
 
 
     public static void main(String[] args) {
-
-       QuestionUD();
-
-
-
+        QuestionUD();
     }
+
+
 
     public static void SwitchUD(char operationDesiredAsChar) {
 
+        double result;
+
         switch (operationDesiredAsChar) {
             case 'A':
-                getNum1();
-                getNum2();
+                result = getNum1() + getNum2();
+                theLastResult(result);
                 break;
             case 'S':
-                getNum1();
-                getNum2();
-                Subtraction(getNum1(), getNum2());
+                result = getNum1() - getNum2();
+                theLastResult(result);
                 break;
-
             case 'M':
-                getNum1();
-                getNum2();
+                result = getNum1() * getNum2();
+                theLastResult(result);
                 break;
 
             case 'D':
-                getNum1();
-                getNum2();
+                result = getNum1() / getNum2();
+                theLastResult(result);
                 break;
 
             default:
                 JOptionPane.showMessageDialog(null,"Invalid! Please enter a choice: \nA\nS\nM\nD");
+                QuestionUD();
                 break;
         }
 
@@ -47,35 +46,27 @@ public class SixthJavaQs {
 
     public static void QuestionUD()
     {
+
         String operationDesired = JOptionPane.showInputDialog("(A) Please choose one of the following: \nA (for addition) " +
                 "\nS (for subtraction) \n M (for multiplication) \n D (for division)");
 
         char operationDesiredAsChar = operationDesired.charAt(0);
-        operationDesiredAsChar = operationDesiredAsChar;
-        SixthJavaQs.SwitchUD(operationDesiredAsChar);
 
-        SixthJavaQs.theLastResult(double result);
+        if(!operationDesired.equals("Quit"))
+        {
+            SixthJavaQs.SwitchUD(operationDesiredAsChar);
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null,"Thanks for using the program! Quitting now...s");
+        }
+
     }
 
     public static void theLastResult(double result)
+
     {
         JOptionPane.showMessageDialog(null,"your result is: " + result);
-    }
-
-    public static double Addition(double firstNumber, double secondNumber)
-    {
-        double result;
-        result = firstNumber + secondNumber;
-        return result;
-
-    }
-
-    public static double Subtraction(double firstNumber, double secondNumber)
-    {
-        double result;
-        result = firstNumber - secondNumber;
-        return result;
-
     }
 
     public static double getNum1()

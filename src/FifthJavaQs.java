@@ -1,69 +1,85 @@
 import javax.swing.*;
 
 public class FifthJavaQs {
+
+
     public static void main(String[] args) {
-
-        Question();
+        QuestionUD();
     }
 
 
-    public void Result(double result)
-    {
-        JOptionPane.showMessageDialog(null,"The result is : " + result);
-    }
 
-    public static String Question()
-    {
-        String operationDesired = JOptionPane.showInputDialog("(A) Please choose one of the following: \nA (for addition) " +
-                "\nS (for subtraction) \n M (for multiplication) \n D (for division)");
-        return operationDesired;
-    }
+    public static void SwitchUD(char operationDesiredAsChar) {
 
-    public static void switchCode(String operationDesired)
-    {
-
-        char operationDesiredAsChar = operationDesired.charAt(0);
+        double result;
 
         switch (operationDesiredAsChar) {
             case 'A':
-                String firstNumberAsString = JOptionPane.showInputDialog("(B) Please enter first number: ");
-                double firstNumber = Double.parseDouble(firstNumberAsString);
-
-                String secondNumberAsString = JOptionPane.showInputDialog("(B) Please enter first number: ");
-                double secondNumber = Double.parseDouble(firstNumberAsString);
-
-                double result = firstNumber + secondNumber;
+                result = getNum1() + getNum2();
+                theLastResult(result);
+                break;
             case 'S':
-                firstNumberAsString = JOptionPane.showInputDialog("(B) Please enter first number: ");
-                firstNumber = Double.parseDouble(firstNumberAsString);
-
-                secondNumberAsString = JOptionPane.showInputDialog("(B) Please enter first number: ");
-                secondNumber = Double.parseDouble(firstNumberAsString);
-
-                result = firstNumber - secondNumber;
+                result = getNum1() - getNum2();
+                theLastResult(result);
+                break;
             case 'M':
-                firstNumberAsString = JOptionPane.showInputDialog("(B) Please enter first number: ");
-                firstNumber = Double.parseDouble(firstNumberAsString);
-
-                secondNumberAsString = JOptionPane.showInputDialog("(B) Please enter first number: ");
-                secondNumber = Double.parseDouble(firstNumberAsString);
-
-                result = firstNumber * secondNumber;
+                result = getNum1() * getNum2();
+                theLastResult(result);
+                break;
 
             case 'D':
-                firstNumberAsString = JOptionPane.showInputDialog("(B) Please enter first number: ");
-                firstNumber = Double.parseDouble(firstNumberAsString);
-                secondNumberAsString = JOptionPane.showInputDialog("(B) Please enter first number: ");
-                secondNumber = Double.parseDouble(firstNumberAsString);
-
-                result = firstNumber * secondNumber;
+                result = getNum1() / getNum2();
+                theLastResult(result);
+                break;
 
             default:
                 JOptionPane.showMessageDialog(null,"Invalid! Please enter a choice: \nA\nS\nM\nD");
+                QuestionUD();
                 break;
         }
 
 
-        }
+
     }
 
+
+
+    public static void QuestionUD()
+    {
+
+        String operationDesired = JOptionPane.showInputDialog("(A) Please choose one of the following: \nA (for addition) " +
+                "\nS (for subtraction) \n M (for multiplication) \n D (for division)");
+
+        char operationDesiredAsChar = operationDesired.charAt(0);
+
+        if(!operationDesired.equals("Quit"))
+        {
+            SixthJavaQs.SwitchUD(operationDesiredAsChar);
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null,"Thanks for using the program! Quitting now...s");
+        }
+
+    }
+
+    public static void theLastResult(double result)
+
+    {
+        JOptionPane.showMessageDialog(null,"your result is: " + result);
+    }
+
+    public static double getNum1()
+    {
+        String firstNumberAsString = JOptionPane.showInputDialog("(B) Please enter first number: ");
+        double firstNumber = Double.parseDouble(firstNumberAsString);
+        return firstNumber;
+    }
+
+    public static double getNum2()
+    {
+        String secondNumberAsString = JOptionPane.showInputDialog("(C) Please enter the second number: ");
+        double secondNumber = Double.parseDouble(secondNumberAsString);
+        return secondNumber;
+    }
+}
