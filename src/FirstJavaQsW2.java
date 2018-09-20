@@ -4,7 +4,7 @@ public class FirstJavaQsW2 {
 
     public static void main(String[] args) {
 
-        rateQuestionUD();
+        theLastResult(poundsToEuroConverter(rateQuestionUD(),poundQuestionUD()));
 
     }
 
@@ -12,7 +12,6 @@ public class FirstJavaQsW2 {
     {
        String rateQuestionAsString = JOptionPane.showInputDialog("Please enter the rate current rate of GB to euro:");
        double rateQuestion = Double.parseDouble(rateQuestionAsString);
-       poundQuestionUD();
        return rateQuestion;
 
     }
@@ -21,7 +20,6 @@ public class FirstJavaQsW2 {
     {
         String poundInputAsString = JOptionPane.showInputDialog("Please enter the amount of pounds you want to convert to euros:");
         double poundInput = Double.parseDouble(poundInputAsString);
-        poundsToEuroConverter();
         return poundInput;
     }
 
