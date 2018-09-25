@@ -3,11 +3,6 @@ import javax.swing.*;
 
 public class Book {
 
-    public void main(String[] args) {
-
-        OtherLibrary lb1 = new OtherLibrary();
-
-    }
 
     private String title;
     private double price;
@@ -15,9 +10,10 @@ public class Book {
     private int noOfPages;
 
     public void setTitle (String title)
-    {
-        this.title = title;
-    }
+        {
+            this.title = title;
+        }
+
 
     public String getTitle()
     {
@@ -69,6 +65,12 @@ public class Book {
         setPrice(price);
         setISBN(ISBN);
         setnoOfPages(noOfPages);
+    }
+
+    public String toString()
+    {
+        return "Title: " + getTitle() + "\nPrice: " + getPrice()
+                + "ISBN: " + getISBN() + "Number of Pages: " + getnoOfPages();
     }
 
 
