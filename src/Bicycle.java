@@ -29,6 +29,7 @@ public class Bicycle {
 
     public String toString()
     {
-        return "The owners name: " + getName() + "The value of the bike: " + getValue() + "The make of the bike: " + getMake();
+
+        return "\nThe owners name: " + getName() + "\nThe value of the bike: " + getValue() + "\nThe make of the bike: " + getMake();
     }
 }
