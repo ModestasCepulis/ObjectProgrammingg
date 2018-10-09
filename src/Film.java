@@ -1,3 +1,6 @@
+import javax.swing.*;
+import java.awt.*;
+
 public class Film {
 
     private String title;
@@ -17,6 +20,25 @@ public class Film {
     public int getNumberOfFilms(){return numberOfFilms;};
     public void theNumberCounter(){numberOfFilms++;}
 
+    public void displayFilms(Film[] array){
+        JTextArea text = new JTextArea(2,2);
+        Font font = new Font("monoscape", Font.PLAIN, 12);
+        text.setFont(font);
+
+        String displayText = "Number of Films: " + getNumberOfFilms();
+
+        for(int i=0;i<array.length;i++)
+        {
+            displayText+="\n\nFilm: " + array[i].getTitle() + "\nDirector " + array[i].getDirector() +
+                    "\nDuration: " + array[i].getDuration() + "minutes\n";
+
+        }
+
+        text.setText(displayText);
+
+        JOptionPane.showMessageDialog(null,text,"Catalog",JOptionPane.PLAIN_MESSAGE);
+    }
+
 
     public Film()
     {
@@ -35,7 +57,7 @@ public class Film {
 
     public String toString()
     {
-        return "Number of Films: " + "\n\nFilm: " + "\nDirection: " + "\nDuration: ";
+        return "\n\nFilm: " + getTitle() + "\nDirection: " + getDirector() + "\nDuration: " + getDuration();
     }
 
 
