@@ -45,18 +45,18 @@ public class MyFlicks2 {
     {
 
 
-        Film[] array = new Film[amountMovies()];
+        Film[] catalog = new Film[amountMovies()];
 
-        for(int i = 0; i<array.length; i++)
+        for(int i = 0; i<catalog.length; i++)
         {
-            array[i] = new Film();
+            catalog[i] = new Film();
 
-            array[i].setTitle(inputFilm());
-            array[i].setDuration(inputDuration());
-            array[i].setDirector(inputDirector());
-
-            flm.displayFilms(array);
+            catalog[i].setTitle(inputFilm());
+            catalog[i].setDuration(inputDuration());
+            catalog[i].setDirector(inputDirector());
         }
+
+        flm.displayFilms(catalog);
 
     }
 

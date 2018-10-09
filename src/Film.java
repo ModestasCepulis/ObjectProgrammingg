@@ -21,7 +21,8 @@ public class Film {
     public void theNumberCounter(){numberOfFilms++;}
 
     public void displayFilms(Film[] array){
-        JTextArea text = new JTextArea(2,2);
+        JTextArea text = new JTextArea();
+
         Font font = new Font("monoscape", Font.PLAIN, 12);
         text.setFont(font);
 
@@ -29,7 +30,7 @@ public class Film {
 
         for(int i=0;i<array.length;i++)
         {
-            displayText+="\n\nFilm: " + array[i].getTitle() + "\nDirector " + array[i].getDirector() +
+            displayText += "\n\nFilm: " + array[i].getTitle() + "\nDirector " + array[i].getDirector() +
                     "\nDuration: " + array[i].getDuration() + "minutes\n";
 
         }
