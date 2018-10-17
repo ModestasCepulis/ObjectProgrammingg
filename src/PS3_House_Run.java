@@ -21,7 +21,7 @@ public class PS3_House_Run {
         {
             catalog[i] = new PS3_House();
 
-            catalog[i].setOwner();
+            catalog[i].setOwner(new Person(JOptionPane.showInputDialog("Please enter the owners name: ")));
             catalog[i].setType(JOptionPane.showInputDialog("Please enter the type of the house: "));
             catalog[i].setAddress(JOptionPane.showInputDialog("Please enter the address of the house: "));
             catalog[i].setPrice(Integer.parseInt(JOptionPane.showInputDialog("Please enter the price of the house: ")));
