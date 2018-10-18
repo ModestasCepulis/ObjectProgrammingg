@@ -1,12 +1,5 @@
 public interface Transactable {
 
-    public static void lodge()
-    {
-
-    }
-
-    public static void withdraw()
-    {
-
-    }
+    public  void lodge(double a);
+    public  void withdraw(double a);
 }
